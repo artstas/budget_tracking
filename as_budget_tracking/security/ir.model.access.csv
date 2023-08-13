@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access__model_budget_element,access__model_budget_element,model_budget_element,base.group_user,1,1,1,1
+access__model_budget_category,access__model_budget_category,model_budget_category,base.group_user,1,1,1,1
+access__model_budget_element_line,access__model_budget_element_line,model_budget_element_line,base.group_user,1,1,1,1

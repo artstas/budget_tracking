@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_budget_tracking_budget_category_view_tree" model="ir.ui.view">
+        <field name="name">budget.category.tree</field>
+        <field name="model">budget.category</field>
+        <field name="arch" type="xml">
+            <tree string="Budget Categories" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="as_budget_tracking_budget_category_action_window" model="ir.actions.act_window">
+        <field name="name">Budget Category</field>
+        <field name="res_model">budget.category</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem
+        id="budget_category_menu"
+        name="Categories"
+        action="as_budget_tracking_budget_category_action_window"
+        parent="as_budget_tracking.budget_element_main_menu"
+        sequence="1"/>
+
+</odoo>

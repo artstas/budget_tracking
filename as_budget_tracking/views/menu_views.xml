@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="budget_element_main_menu"
+        name="Budget Elements"
+        web_icon="as_budget_tracking,static/description/icon.png"
+        action="as_budget_tracking_budget_element_action_window"
+        sequence="99"/>
+
+</odoo>

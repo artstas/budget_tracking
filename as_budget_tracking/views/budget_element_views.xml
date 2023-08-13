@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_budget_tracking_budget_element_view_form" model="ir.ui.view">
+        <field name="name">budget.element.form</field>
+        <field name="model">budget.element</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <h1>
+                            <field  class="text-break" name="name" default_focus="1" placeholder="Budget element label"/>
+                        </h1>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_finish"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="currency_id"/>
+                            <field name="total_amount"/>
+                        </group>
+                        <group>
+                            <field name="total_income"/>
+                            <field name="total_expenses"/>
+                        </group>
+                    </group>
+                    <field name="line_ids">
+                        <tree editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="date"/>
+                            <field name="category_id"/>
+                            <field name="note"/>
+                            <field name="currency_id" optional="hide"/>
+                            <field name="amount"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="as_budget_tracking_budget_element_view_tree" model="ir.ui.view">
+        <field name="name">budget.element.tree</field>
+        <field name="model">budget.element</field>
+        <field name="arch" type="xml">
+            <tree string="Budget Elements">
+                <field name="name"/>
+                <field name="date_start"/>
+                <field name="date_finish"/>
+                <field name="total_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="as_budget_tracking_budget_element_action_window" model="ir.actions.act_window">
+        <field name="name">Budget Element</field>
+        <field name="res_model">budget.element</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
