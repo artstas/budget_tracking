@@ -54,10 +54,49 @@
         </field>
     </record>
 
+    <record id="as_budget_tracking_budget_element_view_graph" model="ir.ui.view">
+        <field name="name">budget.element.graph</field>
+        <field name="model">budget.element</field>
+        <field name="arch" type="xml">
+            <graph string="Budget Elements" sample="0">
+                <field name="name"/>
+                <field name="total_amount" type="measure"/>
+                <field name="total_income" type="measure"/>
+                <field name="total_expenses" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <record id="as_budget_tracking_budget_element_action_window" model="ir.actions.act_window">
         <field name="name">Budget Element</field>
         <field name="res_model">budget.element</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <record id="as_budget_tracking_budget_element_line_view_graph" model="ir.ui.view">
+        <field name="name">budget.element.line.graph</field>
+        <field name="model">budget.element.line</field>
+        <field name="arch" type="xml">
+            <graph string="Budget" sample="0">
+                <field name="budget_element_id"/>
+                <field name="category_id"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="as_budget_tracking_budget_element_line_expenses_action_window" model="ir.actions.act_window">
+        <field name="name">Budget Element Line</field>
+        <field name="res_model">budget.element.line</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('type', '=', 'expenses')]</field>
+    </record>
+
+    <record id="as_budget_tracking_budget_element_line_income_action_window" model="ir.actions.act_window">
+        <field name="name">Budget Element Line</field>
+        <field name="res_model">budget.element.line</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('type', '=', 'income')]</field>
     </record>
 
 </odoo>

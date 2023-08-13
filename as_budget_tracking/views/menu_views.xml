@@ -8,4 +8,25 @@
         action="as_budget_tracking_budget_element_action_window"
         sequence="99"/>
 
+    <menuitem
+        id="budget_category_menu"
+        name="Categories"
+        action="as_budget_tracking_budget_category_action_window"
+        parent="as_budget_tracking.budget_element_main_menu"
+        sequence="1"/>
+
+    <menuitem
+        id="budget_element_line_income_menu"
+        name="Lines incomes"
+        action="as_budget_tracking_budget_element_line_income_action_window"
+        parent="as_budget_tracking.budget_element_main_menu"
+        sequence="2"/>
+
+    <menuitem
+        id="budget_element_line_expenses_menu"
+        name="Lines expenses"
+        action="as_budget_tracking_budget_element_line_expenses_action_window"
+        parent="as_budget_tracking.budget_element_main_menu"
+        sequence="3"/>
+
 </odoo>

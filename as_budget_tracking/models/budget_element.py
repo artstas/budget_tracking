@@ -9,9 +9,12 @@ class BudgetElement(models.Model):
     date_start = fields.Date(required=True)
     date_finish = fields.Date(required=True)
     currency_id = fields.Many2one(comodel_name="res.currency", )
-    total_amount = fields.Monetary(compute="_compute_total_amount", )
-    total_income = fields.Monetary(compute="_compute_total_amount", )
-    total_expenses = fields.Monetary(compute="_compute_total_amount", )
+    total_amount = fields.Monetary(
+        compute="_compute_total_amount", store=True, )
+    total_income = fields.Monetary(
+        compute="_compute_total_amount", store=True, )
+    total_expenses = fields.Monetary(
+        compute="_compute_total_amount", store=True, )
     line_ids = fields.One2many(
         comodel_name="budget.element.line",
         inverse_name="budget_element_id", )

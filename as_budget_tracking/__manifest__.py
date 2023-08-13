@@ -2,7 +2,7 @@
     "name": "Budget Tracking",
     "author": "Artemenko Stas",
     "website": "https://github.com/artstas",
-    "version": "16.0.0.1",
+    "version": "16.0.0.2",
     "summary": "",
     "description": "",
     "depends": [],
