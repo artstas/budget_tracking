@@ -41,6 +41,7 @@ class BudgetElement(models.Model):
 class BudgetElementLine(models.Model):
     _name = "budget.element.line"
     _description = "Budget Element Line"
+    _order = "date"
 
     sequence = fields.Integer()
     budget_element_id = fields.Many2one(comodel_name="budget.element", )
